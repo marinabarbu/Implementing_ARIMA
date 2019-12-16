@@ -4,7 +4,8 @@ import pandas as pd
 from pandas import datetime
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-
+import csv
+from statsmodels.tsa.arima_model import ARIMA
 
 def parser(x):
     return datetime.strptime(x, '%d %m %Y %H')
@@ -31,6 +32,17 @@ myFmt = mdates.DateFormatter('%Y-%m-%d %H')
 plt.gca().xaxis.set_major_formatter(myFmt)
 #print(dates_to_plot)
 
+with open('dates_and_values.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    for i in range(len(dates)):
+        writer.writerow([dates[i], values[i]])
+
 plt.show()
 plt.close()
+
+model_arima = ARIMA()
+
+
+
+
 
