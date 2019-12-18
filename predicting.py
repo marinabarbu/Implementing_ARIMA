@@ -17,14 +17,14 @@ for row in data.itertuples():
     #print(row[1])
     items = row[1].split(";")
     if items[3] == "PM10":
-        #print(items[0], items[1], items[5])
-        #print(parser(items[0]+" "+items[1]))
-        dates.append(parser(items[0]+" "+items[1]))
-        values.append(float(items[5]))
+        print(items[0], items[1], items[5])
+        print(parser(items[0]+" "+items[1]))
+        #dates.append(parser(items[0]+" "+items[1]))
+        #values.append(float(items[5]))
 
 #print(dates)
 #print(values)
-
+'''
 dates_to_plot = mdates.date2num(dates)
 plt.plot(dates_to_plot, values)
 plt.gcf().autofmt_xdate()
@@ -42,7 +42,7 @@ plt.close()
 
 model_arima = ARIMA()
 
-
+'''
 
 
 
